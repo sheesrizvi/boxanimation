@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#play {
+    color: #555;
+    font: bold 12px 'helvetica neue', helvetica, arial, sans-serif;
+    left: 46%;
+    margin: 20px 0 0 0;
+    position: absolute;
+    top: 54%;
+    text-align: center;
+    width: 40px; 
+    background-color: rgb(71, 240, 71);  
+}
+#pause {
+    color: #555;
+    font: bold 12px 'helvetica neue', helvetica, arial, sans-serif;
+    left: 55%;
+    margin: 20px 0 0 0;
+    position: absolute;
+    top: 54%;
+    text-align: center;
+    width: 40px;   
+    background-color: red;
+}
+
+
+
+#bars {
+    background-color: rgb(2, 2, 31);
+    border-style: solid;
+    height: 102px;
+    left: 45%;
+    margin: -30px 0 0 -20px;
+    position: absolute;
+    top: 45%;
+    width: 250px;
+}
+
+.bar {
+   background: #666;
+    bottom: 1px;
+    height: 3px;
+    position: absolute;
+    width: 49px;      
+    animation: sound 3ms  ease-in-out infinite alternate;
+    animation-play-state: paused;
+
+}
+
+
+@keyframes sound {
+    0% {
+       opacity: 1;
+        height: 3px; 
+    }
+    50% {
+        opacity: 1;
+        height: 45px;
+
+    }
+    100% {
+        opacity: 1;       
+        height: 100px;        
+    }
+}
+
+.bar:nth-child(1)  { left: 0px; animation-duration: 1300ms; background-color: rgb(112, 112, 219); }
+.bar:nth-child(2)  { left: 50px; animation-duration: 1100ms; background-color: rgb(138, 49, 138) }
+.bar:nth-child(3)  { left: 100px; animation-duration: 1400ms; background-color: palevioletred }
+.bar:nth-child(4)  { left: 150px; animation-duration: 1200ms; background-color: orangered }
+.bar:nth-child(5)  { left: 200px; animation-duration: 1500ms; background-color: rgb(253, 193, 82) }
+
+</style>
+
+</head>
+
+
+<div id="bars">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+
+</div>
+
+<button id="play" onclick="myPlayFunction()">Start</button>
+<button id="pause" onclick="myPauseFunction()">Stop</button>
+
+<script>
+ function myPlayFunction() {
+  document.querySelector(".bar:nth-child(1)").style.animationPlayState = "running";
+  document.querySelector(".bar:nth-child(2)").style.animationPlayState = "running";
+  document.querySelector(".bar:nth-child(3)").style.animationPlayState = "running";
+  document.querySelector(".bar:nth-child(4)").style.animationPlayState = "running";
+  document.querySelector(".bar:nth-child(5)").style.animationPlayState = "running";
+}
+
+function myPauseFunction() {
+  document.querySelector(".bar:nth-child(1)").style.animationPlayState = "paused";
+  document.querySelector(".bar:nth-child(2)").style.animationPlayState = "paused";
+  document.querySelector(".bar:nth-child(3)").style.animationPlayState = "paused";
+  document.querySelector(".bar:nth-child(4)").style.animationPlayState = "paused";
+  document.querySelector(".bar:nth-child(5)").style.animationPlayState = "paused";
+}
+</script>
+
+</html>
